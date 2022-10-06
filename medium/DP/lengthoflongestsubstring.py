@@ -1,4 +1,5 @@
 class Solution:
+    # longest substring without repeating characters
     def lengthOfLongestSubstring(self, s: str) -> int:
         left = 0
         dp = {}
