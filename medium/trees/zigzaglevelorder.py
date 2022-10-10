@@ -50,3 +50,34 @@ class Solution:
                 level_count = next_level_count
                 next_level_count = 0
         return ans
+
+
+"""Second solution, cleaner with stack"""
+
+
+class Solution2:
+    def zigzagLevelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if not root:
+            return None
+        zig = True
+        ans = []
+        stack = [root]
+        while stack:
+            nextStack = []
+            ans.append([])
+            while stack:
+                node = stack.pop()
+                if zig:
+                    if node.left:
+                        nextStack.append(node.left)
+                    if node.right:
+                        nextStack.append(node.right)
+                else:
+                    if node.right:
+                        nextStack.append(node.right)
+                    if node.left:
+                        nextStack.append(node.left)
+                ans[-1].append(node.val)
+            stack = nextStack
+            zig = not zig
+        return ans
