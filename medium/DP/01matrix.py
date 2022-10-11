@@ -1,5 +1,5 @@
 class Solution:
-    def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
+    def updateMatrix(self, mat: list[list[int]]) -> list[list[int]]:
         rows = len(mat)
         cols = len(mat[0])
         ans = [[float('inf') for _ in range(cols)] for _ in range(rows)]
