@@ -25,10 +25,9 @@ def totalFruit(fruits: list[int]) -> int:
             fruit1, fruit2 = next_left_fruit, new_fruit
             next_left_fruit, next_left_pos = new_fruit, right
             curr_max = right - left
-        else:
-            if new_fruit != next_left_fruit:
-                next_left_fruit = new_fruit
-                next_left_pos = right
+        elif new_fruit != next_left_fruit:
+            next_left_fruit = new_fruit
+            next_left_pos = right
 
         curr_max += 1
         total_max = max(curr_max, total_max)
